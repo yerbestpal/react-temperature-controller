@@ -9,6 +9,7 @@ const App = () => {
     const newTemperature = temperatureValue + 1;
     setTemperatureValue(newTemperature);
 
+    if (newTemperature > 29) setTemperatureValue(30);
     if (newTemperature >= 15) setTemperatureColor('hot');
   }
 
@@ -16,6 +17,7 @@ const App = () => {
     const newTemperature = temperatureValue - 1;
     setTemperatureValue(newTemperature);
 
+    if (newTemperature < -29) setTemperatureValue(-30);
     if (newTemperature < 15) setTemperatureColor('cold');
   }
 
