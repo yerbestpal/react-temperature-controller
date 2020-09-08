@@ -6,13 +6,20 @@ const App = () => {
   const [temperatureColor, setTemperatureColor] = useState('cold');
 
   const increaseTemperature = () => {
-    setTemperatureValue(temperatureValue + 1);
+    const newTemperature = temperatureValue + 1;
+    setTemperatureValue(newTemperature);
+
+    if (newTemperature >= 15) setTemperatureColor('hot');
   }
 
   const decreaseTemperature = () => {
-    setTemperatureValue(temperatureValue - 1);
+    const newTemperature = temperatureValue - 1;
+    setTemperatureValue(newTemperature);
+
+    if (newTemperature < 15) setTemperatureColor('cold');
   }
 
+  // Return JSX
   return (
     <div className='app-container'>
       <div className='temperature-display-container'>
